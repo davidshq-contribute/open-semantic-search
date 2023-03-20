@@ -16,7 +16,7 @@ The [documentation for users and admins](docs/doc/README.md) is included in the 
 
 ## Software architecture
 
-You can find the [documentation of the search engine architecture in `docs/doc/modules/README.md`](docs/doc/modules/README.md).
+You can find [documentation of the search engine's architecture in `docs/doc/modules/README.md`](docs/doc/modules/README.md).
 
 ## Documentation format
 

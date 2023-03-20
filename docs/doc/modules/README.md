@@ -1,6 +1,6 @@
 ---
-title: Search engine components and architecture
-authors:
+title: Search engine components and architecture  
+authors:  
     - Markus Mandalka
 ---
 
@@ -12,7 +12,7 @@ authors:
 
 ## Overview of services and main components
 
-The relations in this chart show dependencies and connections between services and main components witch show different directions than the data flow (see another [flowchart of document processing and data flow](#flowchart-of-document-processing-and-data-flow)).
+The relations in this chart show dependencies and connections between services and main components which show different directions than the data flow (see another [flowchart of document processing and data flow](#flowchart-of-document-processing-and-data-flow)).
 
 ```mermaid
 
@@ -166,7 +166,7 @@ flowchart TD
 FILEMONITORING[Filesystem monitoring]
 click FILEMONITORING "../../trigger/filemonitoring/"
 
-FILEMONITORING-->|Immediatelly add task if changed or new file| CELERY
+FILEMONITORING-->|Immediately add task if changed or new file| CELERY
 
 SCHEDULER[Cron scheduler]
 click SCHEDULER "https://github.com/opensemanticsearch/open-semantic-search-apps/blob/master/etc/cron.d/open-semantic-search"
@@ -294,14 +294,14 @@ click NEO4J "https://github.com/opensemanticsearch/open-semantic-etl/blob/master
 - **[User Interface](../search/README.md)**: Client and user interface
   - **Search query forms**: Search query form for full text search
   - **Explorer and navigator**: Search with full text search and navigate (exploratory search) the index or search results with **interactive filters (facets)**
-    - **Viewers**: Parts of the UI to show different views (i.e. analytics like wordlcouds or trend charts) and previews for special formats (i.e. photos, documents, email ...)
-    - Code: /solr-php-ui/templates/
+    - **Viewers**: Parts of the UI to show different views (i.e. analytics like wordclouds or trend charts) and previews for special formats (i.e. photos, documents, email ...)
+    - Code: `/solr-php-ui/templates/`
   - **Annotators**: Web Apps for tagging documents or CMS with forms and fields to manage meta data like tags or annotations
-  - **Search Apps**: Applications and user interfaces for search like search with lists tool or named entities manager
+  - **Search Apps**: Applications and user interfaces for search, like search with lists tool or named entities manager
 - **Index and search server (Solr or Elastic Search)**: Search server managing the index (indexer) and running search queries (query handler)
-  - Datamodel/Schema: src/solr.deb/var/solr/data/opensemanticsearch/conf/managed-schema
-  - Storage: /var/solr/data
-  - Log: /var/solr/logs/
+  - Datamodel/Schema: `src/solr.deb/var/solr/data/opensemanticsearch/conf/managed-schema`
+  - Storage: `/var/solr/data`
+  - Log: `/var/solr/logs/`
 - **[Open Semantic ETL](../../etl "Framework for data integration, data analysis and data enrichment")**: Framework for data integration, data analysis, data enrichment and ETL (Extract, transform, load) pipelines or chains
   - **[Connectors, importers, ingestors or crawlers](../admin/connectors)**: Import data from a data source (i.e. file system, file directory, file share, website or newsfeed)
   - **Parsers:** *Apache Tika* to extract text and metadata from different file formats and document formats
@@ -312,16 +312,16 @@ click NEO4J "https://github.com/opensemanticsearch/open-semantic-etl/blob/master
 - **[Web services (REST-API)](../admin/rest-api)**: Available via standard network protocol HTTP and waiting until you (i.e. using the web admin interface) or another service (i.e. using the REST-API) demands actions like crawling a directory or a webpage and starting this actions
 - **[Queue manager (Celery on RabbitMQ)](../admin/queue/README.md)**: Managing task queue and starting of text extraction, analysis, data enrichment and indexing jobs by the right balance of parallel workers
 - **[Scheduler](../admin/config/scheduler)**: Managing starting of scheduled indexing jobs. This can be crontab for Cron starting the command line tools.
-  Config: /etc/cron.d/open-semantic-search
+  Config: `/etc/cron.d/open-semantic-search`
 
 
 # Document processing, extract, transform, load (ETL) and enhancing by data enrichment and data analysis
 
-How (new) data is handled by this components and [ETL (extract, transform, load), document processing, data analysis and data enrichment](../../open-semantic-etl):
+How (new) data is handled by these components and [ETL (extract, transform, load), document processing, data analysis and data enrichment](../../open-semantic-etl):
 
 * A user manually or a Cron daemon automatically from time to time starts a command
 * The command line tools or the web API getting this command starts a ETL (extract, transform, load), data analysis and data enrichment chain to import, analyze and index data
-* A input plugin or [connector](../admin/connectors) (i.e. the connector for the file system or the connector for a website) reads from its datasource
+* An input plugin or [connector](../admin/connectors) (i.e. the connector for the file system or the connector for a website) reads from its datasource
 * The connectors, an Apache Tika parser, or a file format based data converter or extractor extracts data from the given document or file format
 * The ETL framework calls all configured [enhancer plugins for data enrichment](../data_enrichment) to get additional analysis for the data or annotations to this data from a CMS.
 * The output storage plugin or indexer index the text and metadata to the Solr index or to the [Elastic Search index](../../etl/elastic_search), so all other tools can search this data
@@ -370,9 +370,9 @@ Based on Solr client *solr-php-client* (pure vanilla php) and standard User Inte
 [Learn more](../../solr-php-ui) ...
 
 Documentation: [Howto seach](../search/README.md)
-Deployment /usr/share/solr-php-ui
-Log: /var/log/apache2/
-Sourcecode: src/solr-php-ui (Github...)
+Deployment `/usr/share/solr-php-ui`
+Log: `/var/log/apache2/`
+Sourcecode: `src/solr-php-ui` (Github...)
 
 
 # Index server
