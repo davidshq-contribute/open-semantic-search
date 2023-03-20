@@ -1,6 +1,6 @@
 ---
-title: Open Semantic Desktop Search
-authors:
+title: Open Semantic Desktop Search  
+authors:  
     - Markus Mandalka
 ---
 

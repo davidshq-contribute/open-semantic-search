@@ -1,6 +1,6 @@
 ---
-title: Automatic extraction of law codes and law clauses
-authors:
+title: Automatic extraction of law codes and law clauses  
+authors:  
 - Markus Mandalka
 ---
 

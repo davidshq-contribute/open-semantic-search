@@ -1,6 +1,6 @@
 ---
-title: Data storage locations
-authors:
+title: Data storage locations  
+authors:  
     - Markus Mandalka
 ---
 
@@ -11,7 +11,7 @@ In which paths and directories Open Semantic Search stores your data:
 
 ## Logfiles
 
-See separated [documentation of logs](../config/log/README.md).
+See separate [documentation of logs](../config/log/README.md).
 
 
 ## Database (Open Semantic Search Apps)

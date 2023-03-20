@@ -1,6 +1,6 @@
 ---
-title: Documentation
-authors:
+title: Documentation  
+authors:  
     - Markus Mandalka
 ---
 
